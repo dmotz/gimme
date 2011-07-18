@@ -1,0 +1,14 @@
+{
+    "name": "gimme",
+    "homepage": "http://github.com/dmotz/gimme",
+    "author": {
+      "name": "Dan Motzenbecker",
+      "url": "http://github.com/dmotz"
+    },
+    "bin": { "gimme" : "./gimme" },
+    "repository": { "type" : "git", "url" : "http://github.com/dmotz/gimme.git" },
+    "description": "Simple command line node script that shows whether a domain is available or not.",
+    "keywords": ["domain", "whois"],
+    "preferGlobal" : "true",
+    "main": "./gimme"
+}
