@@ -24,7 +24,7 @@ if(ext !== null){
 		for(var i = 0, len = exts.length; i < len; i++){
 			str += '.' + exts[i] + ' ';
 		}
-		str += '\x1b[0mright now. \n\nHere\'s what gimme found anyway:'
+		str += '\x1b[0mright now. \n\nHere\'s what gimme found anyway:';
 		console.log(str);
 	}
 }
@@ -46,7 +46,7 @@ var http = require('http'),
 function output(obj){
 	for(var i = 0, len = exts.length; i < len; i++){
 		var status = (obj[exts[i]] === 'a') ? 'YES! ' : 'NO.  ',
-			color = (status === 'YES! ') ? '\x1b[32m' : '\x1b[31m';
+			color = (status === 'YES! ') ? '\x1b[32m' : '\x1b[31m',
 			str = color + status + domain + '.' + exts[i] + '\x1b[0m';
 		console.log(str);
 	}
