@@ -3,7 +3,8 @@
 /**
  * gimme
  * cut through the cruft of whois
- * usage: $ gimme example
+ * usage: $ gimme somethin
+ * uses instantdomainsearch.com for results
  * Dan Motzenbecker
  * MIT License
  */
