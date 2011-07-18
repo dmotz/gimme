@@ -1,13 +1,16 @@
-Cut through the cruft of whois. 
+# gimme
+## Cut through the cruft of whois. 
+## Fast, easy-to-read answer to: "is this domain taken?"
+Requires node.js and npm. Uses instantdomainsearch.com for data.
 
-Fast, easy-to-read answer to: "is this domain taken?"
+### Installation:
 
-Uses instantdomainsearch.com for data.
+   $ npm install gimme
 
-Usage:
+### Usage:
 
-$ gimme somethin
+	$ gimme somethin
 
-or 
+or with an extension:
 
-$ gimme somethin.com
+	$ gimme somethin.com
