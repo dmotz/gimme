@@ -8,12 +8,12 @@ Requires node.js and npm. Uses instantdomainsearch.com for data.
 
 ### Installation:
 
-	$ npm install gimme
+	$ npm install -g gimme
 
 ### Usage:
 
-	$ gimme somethin
+	$ gimme example
 
 or with an extension:
 
-	$ gimme somethin.com
+	$ gimme example.com
