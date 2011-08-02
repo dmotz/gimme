@@ -11,5 +11,5 @@
 	"keywords": ["domain", "whois"],
 	"version": "0.1.0",
 	"preferGlobal" : "true",
-	"main": "./gimme"
+	"main": "./gimme.js"
 }
