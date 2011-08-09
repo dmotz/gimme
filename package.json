@@ -8,7 +8,7 @@
 	"bin": { "gimme" : "./gimme.js" },
 	"repository": { "type" : "git", "url" : "http://github.com/dmotz/gimme.git" },
 	"description": "Simple command line utility that takes a name and shows domain and twitter availability.",
-	"keywords": ["domain", "whois"],
+	"keywords": ["domain", "twitter", "whois"],
 	"version": "0.2.0",
 	"preferGlobal" : "true",
 	"main": "./gimme.js"
