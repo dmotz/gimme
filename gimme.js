@@ -2,9 +2,9 @@
 
 /**
  * gimme
- * cut through the cruft of whois
+ * cut through the cruft of whois, find availability info quickly
  * usage: $ gimme example
- * uses instantdomainsearch.com for results
+ * uses twitter.com and instantdomainsearch.com for data
  * Dan Motzenbecker
  * MIT License
  */
@@ -24,30 +24,43 @@ if(ext !== null){
 		for(var i = 0, len = exts.length; i < len; i++){
 			str += '.' + exts[i] + ' ';
 		}
-		str += '\x1b[0mright now. \n\nHere\'s what gimme found anyway:';
+		str += '\x1b[0mand \x1b[36mtwitter\x1b[0m right now. '
+			+ '\n\nHere\'s what gimme found anyway:';
 		console.log(str);
 	}
 }
 var http = require('http'),
-	params = {
+	dParams = {
 		host : 'instantdomainsearch.com',
 		port : 80,
 		path : '/services/quick/?name=' + domain
 	},
-	req = http.get(params, function(res){
-		var data = '';
-		res.on('data', function(chunk){
-			data += chunk;
-		});
-		res.on('end', function(){
-			output(JSON.parse(data));
-		});
+	tParams = {
+		host : 'twitter.com',
+		port : 80,
+		path : '/' + domain
+	};
+
+http.get(dParams, function(res){
+	var data = '';
+	res.on('data', function(chunk){
+		data += chunk;
 	});
-function output(obj){
-	for(var i = 0, len = exts.length; i < len; i++){
-		var status = (obj[exts[i]] === 'a') ? 'YES! ' : 'NO.  ',
-			color = (status === 'YES! ') ? '\x1b[32m' : '\x1b[31m',
-			str = color + status + domain + '.' + exts[i] + '\x1b[0m';
-		console.log(str);
+	res.on('end', function(){
+		var obj = JSON.parse(data);
+		for(var i = 0, len = exts.length; i < len; i++){
+			var status = (obj[exts[i]] === 'a') ? 'YES  ' : ' NO  ',
+				color = (status === 'YES  ') ? '\x1b[32m' : '\x1b[31m',
+				str = color + status + domain + '.' + exts[i] + '\x1b[0m';
+			console.log(str);
+		}
+	});
+});
+
+http.get(tParams, function(res){
+	if(res.statusCode === 200){
+		console.log('\x1b[31m NO  twitter.com/' + domain + '\x1b[0m');
+	}else{
+		console.log('\x1b[32mYES  twitter.com/' + domain + '\x1b[0m');
 	}
-}
+});
