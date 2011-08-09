@@ -2,9 +2,9 @@
 
 Cut through the cruft of whois. 
 
-Fast, easy-to-read answer to: "is this domain taken?"
+Simple command line utility that takes a name and shows domain and twitter availability.
 
-Requires node.js and npm. Uses instantdomainsearch.com for data.
+Requires node.js and npm. Uses twitter.com and instantdomainsearch.com for data.
 
 ### Installation:
 
