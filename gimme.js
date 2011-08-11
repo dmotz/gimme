@@ -47,7 +47,12 @@ http.get(dParams, function(res){
 		data += chunk;
 	});
 	res.on('end', function(){
-		var obj = JSON.parse(data);
+		try{
+			var obj = JSON.parse(data);
+		}catch(e){
+			console.log(' \x1b[31msomething went wrong checking the domain status...\x1b[0m\n');
+			return;
+		}
 		for(var i = 0, len = exts.length; i < len; i++){
 			var status = (obj[exts[i]] === 'a') ? 'YES  ' : ' NO  ',
 				color = (status === 'YES  ') ? '\x1b[32m' : '\x1b[31m',
