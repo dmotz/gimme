@@ -8,23 +8,23 @@ Requires node.js and npm. Uses twitter.com and instantdomainsearch.com for data.
 
 ### Installation:
 
-	$ npm install -g gimme
+    $ npm install -g gimme
 
 ### Usage:
 
-	$ gimme example
+    $ gimme example
 
 or with an extension:
 
-	$ gimme example.com
+    $ gimme example.com
 
 Outputs:
 
-	 NO  example.com
-	 NO  example.net
-	 NO  example.org
-	 NO  example.biz
-	 NO  example.mobi
-	 NO  twitter.com/example
-	
+     NO  example.com
+     NO  example.net
+     NO  example.org
+     NO  example.biz
+     NO  example.mobi
+     NO  twitter.com/example
+    
 (your name might have better luck.)
